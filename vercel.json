@@ -1,16 +1,18 @@
 {
-  "version": 2,
   "builds": [
-    {
-      "src": "bot.py",
-      "use": "@vercel/python"
-    }
+      {
+          "src": "bot.py",
+          "use": "@vercel/python"
+      },
+      {
+          "src": "static/**",
+          "use": "@vercel/static"
+      }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/(.*)",
-      "dest": "bot.py"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "bot.py"
+      }
   ]
 }
